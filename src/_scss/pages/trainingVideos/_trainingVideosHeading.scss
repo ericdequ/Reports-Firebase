@@ -1,0 +1,179 @@
+.training-videos__hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $theme-color-7;
+  padding: $global-padding * 6 0;
+
+  @media (min-width: $medium-screen) {
+    padding: $global-padding * 4 0;
+
+  }
+
+  .grid-content {
+    align-items: center;
+
+    @media (min-width: $medium-screen) {
+      margin: 0 $global-margin * 16;
+    }
+
+    @media (min-width: $large-screen) {
+      margin: 0 $global-margin * 18.25;
+    }
+
+    .training-videos__column-one {
+      display: none;
+
+      @media (min-width: $medium-screen) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .training-img-container {
+        display: flex;
+        justify-content: center;
+
+      }
+
+      .training-img {
+        margin: auto;
+        max-height: 400px;
+
+      }
+    }
+
+    .training-videos__column-two {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (min-width: $tablet-screen) {
+        margin: 0 $global-margin * 15.5;
+      }
+
+      @media (min-width: $medium-screen) {
+        margin: unset;
+        padding: $global-padding * 7 0 $global-padding * 7 $global-padding * 7.5;
+      }
+
+      @media (min-width: $large-screen) {
+        padding: $global-padding * 8 0 $global-padding * 8 $global-padding * 13.75;
+      }
+
+      .training-videos__column-two-container {
+
+        .training-videos__column-two-title {
+          margin-bottom: $global-margin;
+          line-height: 1.5;
+          font-size: $font-size-16;
+          color: $gray-60;
+        }
+
+        .training-videos__column-two-header {
+          color: $gray-90;
+          font-size: $font-size-48;
+          line-height: 1.25;
+          font-weight: $font-semibold;
+          margin-bottom: $global-margin * 2;
+
+          @media (max-width: $medium-screen) {
+            font-weight: $font-semibold;
+            line-height: 1.25;
+          }
+        }
+
+        .training-videos__column-two-body {
+          line-height: 1.5;
+          font-size: $font-size-20;
+          margin-bottom: $global-margin * 3;
+          color: $gray-60;
+        }
+
+        .training-videos__column-two-share-icon {
+          width: rem(17.5);
+          height: rem(20);
+          color: $blue-50;
+        }
+
+        .training-video__column-share-icon {
+          height: rem(24);
+          width: rem(24);
+          display: left;
+
+          span {
+            display: none;
+          }
+
+          .usa-dt-picker__dropdown-container {
+            span {
+              display: inherit;
+            }
+          }
+
+          button {
+            margin-left: 0;
+          }
+
+          .usda-share-icon {
+            margin-left: 0;
+          }
+
+          .usda-share-icon {
+            div.copy-confirmation {
+              @media(max-width:$medium-screen) {
+                transform:translateX(150px);
+              }
+            }
+            .usa-dt-picker .usa-dt-picker__dropdown-container {
+              .usa-dt-picker__button svg:hover {
+                color: $blue-70v;
+              }
+
+              .usa-dt-picker__button svg:active {
+                color: $blue-80v;
+              }
+
+              .usa-dt-picker__list {
+                min-width: 15rem;
+                margin-top: 20px;
+                padding-top: 8px;
+                overflow: hidden;
+                padding-bottom: 8px;
+
+                .usa-dt-picker__list-item {
+                  border-top: none;
+                }
+
+                svg {
+                  color: $gray-cool-60;
+                }
+
+                span {
+                  color: $gray-cool-60;
+                  font-weight: $font-semibold;
+                  font-size: rem(16);
+                  margin-left: 16px;
+                }
+
+                .usa-dt-picker__item {
+                  padding-left: 16px;
+                  padding-right: unset;
+                  padding-top: 8px;
+                  padding-bottom: 8px;
+
+                  &:hover {
+                    background-color: $gray-cool-3;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
