@@ -31,7 +31,7 @@ export default class AccountLandingContent extends React.Component {
             <div className="landing-page">
                 <div className="landing-page__overview">
                     <h2 className="landing-page__title">
-                        Find a Federal Account Profile.
+                        Federal Accounts
                     </h2>
                     <div className="landing-page__description">
                         The government has more than 2,000 unique Federal Accounts, which are similar to bank accounts. Use our Federal Account Profiles to get a better understanding of how agencies receive and spend congressional funding to carry out their programs, projects, and activities.
