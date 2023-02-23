@@ -16,7 +16,6 @@ import reducers from 'redux/reducers/index';
 
 import { LoadingWrapper as Loading } from 'components/sharedComponents/Loading';
 import MobileMessage from 'components/sharedComponents/MobileMessage';
-
 import '_global.scss';
 
 import { routes } from './router/RouterRoutes';
@@ -57,24 +56,69 @@ const ScrollToTop = () => {
     return null;
 };
 
-const AppContainer = () => (
-    <Provider store={store}>
-        <BrowserRouter basename='/usa-spending/'>
-            <Suspense fallback={<Loading isLoading includeHeader includeFooter />}>
-                <ScrollToTop />
-                <Switch>
-                    {routes.filter((route) => !route.hide).map(({ path, component }) => (
-                        <Route
-                            exact
-                            path={path}
-                            component={(routerProps) => WithUrlListener(component, routerProps)}
-                            key={path} />
-                    ))}
-                </Switch>
-                {window.outerWidth < 768 && <MobileMessage />}
-            </Suspense>
-        </BrowserRouter>
-    </Provider>
-);
+
+
+window.addEventListener('message', (event) =>{
+
+    console.log("Listener start")
+
+    const token = event.data.access_token;
+    if(isValidToken(token)){
+        const AppContainer = () => (
+            <Provider store={store}>
+                <BrowserRouter basename='/usa-spending/'>
+                    <Suspense fallback={<Loading isLoading includeHeader includeFooter />}>
+                        <ScrollToTop />
+                        <Switch>
+                            {routes.filter((route) => !route.hide).map(({ path, component }) => (
+                                <Route
+                                    exact
+                                    path={path}
+                                    component={(routerProps) => WithUrlListener(component, routerProps)}
+                                    key={path} />
+                            ))}
+                        </Switch>
+                        {window.outerWidth < 768 && <MobileMessage />}
+                    </Suspense>
+                </BrowserRouter>
+            </Provider>
+        );
+        
+        
+
+    }else{
+
+        const AppContainer = () => (
+            <Provider store={store}>
+                <BrowserRouter basename='/usa/'>
+                    <Suspense fallback={<Loading isLoading includeHeader includeFooter />}>
+                        <ScrollToTop />
+                        <Switch>
+                            {routes.filter((route) => !route.hide).map(({ path, component }) => (
+                                <Route
+                                    exact
+                                    path={path}
+                                    component={(routerProps) => WithUrlListener(component, routerProps)}
+                                    key={path} />
+                            ))}
+                        </Switch>
+                        {window.outerWidth < 768 && <MobileMessage />}
+                    </Suspense>
+                </BrowserRouter>
+            </Provider>
+        );
+
+    }
+
+});
+
+
+/* actually check if token is valid usin sdk or admin/client */
+const isValidToken = (token) => {
+
+    return true
+
+};
+
 
 export default AppContainer;
