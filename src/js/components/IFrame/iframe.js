@@ -41,9 +41,9 @@ const Iframe = () => {
     
             //console.log("True")
             setElement(
-            
+            <div>
               <AppContainer/>
-            
+            </div>
           );
         } else {
             console.log("False")
@@ -55,6 +55,8 @@ const Iframe = () => {
           );
         }
       }
+      return element;
+
       });
 
   
