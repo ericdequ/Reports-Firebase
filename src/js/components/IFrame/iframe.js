@@ -19,49 +19,40 @@ async function isValidToken(token, apiKey){
   const json = await response.json();
   if (json.error_description) {
     console.error("Error while verifying Firebase ID token:", json.error_description);
-    //return json.error_description;
     return false;
   } else {
     console.log(json);
-    //return json;
     return true;
   }
 };
 
-
-
-const Iframe = () => {
+const Iframe = async () => {
   const [element, setElement] = useState(<div></div>);
 
-    window.addEventListener('message', (event) => {
-      if(event.data.type === 'accessToken'){
-        const token = event.data.access_token;
-        if (isValidToken(token,'AIzaSyCvRoFPHRg91b6o2IU4kVvasoDQ0sUk0C0')) {
-            console.log(token)
-    
-            //console.log("True")
-            setElement(
-            <div>
-              <AppContainer/>
-            </div>
-          );
-        } else {
-            console.log("False")
-          setElement(
-            <div>
-              <h1>Access token invalid</h1>
-              <body>Test?</body>
-            </div>
-          );
-        }
+  window.addEventListener('message', async (event) => {
+    if(event.data.type === 'accessToken'){
+      const token = event.data.access_token;
+      const isValid = await isValidToken(token,'AIzaSyCvRoFPHRg91b6o2IU4kVvasoDQ0sUk0C0');
+      if (isValid) {
+        console.log(token)
+        setElement(
+          <div>
+            <AppContainer/>
+          </div>
+        );
+      } else {
+        console.log("False")
+        setElement(
+          <div>
+            <h1>Access token invalid</h1>
+            <body>Test?</body>
+          </div>
+        );
       }
-      return element;
+    }
+  });
 
-      });
-
-  
   return element;
-
 };
 
 export default Iframe;
