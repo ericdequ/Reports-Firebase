@@ -17,7 +17,7 @@ registerIcons();
 
 const appDiv = document.getElementById('app');
 const App = render(
-    <IFrame />,
+    <IFrame/>,
     appDiv
 );
 

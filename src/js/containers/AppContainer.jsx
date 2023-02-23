@@ -58,7 +58,7 @@ const ScrollToTop = () => {
 
         const AppContainer = () => (
             <Provider store={store}>
-                <BrowserRouter basename='/usa-spending/'>
+                <BrowserRouter>
                     <Suspense fallback={<Loading isLoading includeHeader includeFooter />}>
                         <ScrollToTop />
                         <Switch>
