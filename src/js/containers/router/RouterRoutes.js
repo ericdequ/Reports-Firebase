@@ -39,8 +39,7 @@ const EquityCovidSpendingPage = React.lazy(() => import('components/dataDives/Eq
 const InteractiveDataSourcesPage = React.lazy(() => import('components/interactiveDataSources/InteractiveDataSourcesPage').then((comp) => comp));
 const TrainingVideosContainer = React.lazy(() => import('containers/trainingVideos/TrainingVideosContainer').then((comp) => comp));
 const TempPage = React.lazy(() => import('components/tempPage').then((comp) => comp));
-const IFrameValid = React.lazy(() => import('components/tempPage').then((comp) => comp));
-const IFrameInvalid = React.lazy(() => import('components/tempPage').then((comp) => comp));
+//const IFrameValid = React.lazy(() => import('components/IFrame/iframe').then((comp) => comp));
 
 
 

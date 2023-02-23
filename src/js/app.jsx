@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { hot } from "react-hot-loader";
 import AppContainer from 'containers/AppContainer';
 import registerIcons from './registerIcons';
+import IFrame from './components/IFrame/iframe'
 
 /**
  * babel 7 removed the ECMAScript proposals from babel-polyfill.
@@ -16,7 +17,7 @@ registerIcons();
 
 const appDiv = document.getElementById('app');
 const App = render(
-    <AppContainer />,
+    <IFrame />,
     appDiv
 );
 
