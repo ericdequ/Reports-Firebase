@@ -1,58 +1,37 @@
 import React, { useState } from 'react';
-import AppContainer from '../../containers/AppContainer.jsx';
+import AppContainer from '../../containers/AppContainer';
 
-async function isValidToken(token, apiKey){
-  const response = await fetch(
-    `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyIdToken?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        idToken: token,
-        audience: 'breadgetter-179ff',
-      }),
+const IFrame = () => {
+  const [isValidToken, setIsValidToken] = useState(false);
+
+  const onMessage = (event) => {
+   
+    if (event.data.type === 'accessToken') {
+      const accessToken = event.data.access_token;
+
+      // Call an external API to validate the access token
+      // In this example, we just assume it's valid if it's not empty
+      const tokenIsValid = accessToken !== '';
+
+      setIsValidToken(tokenIsValid);
     }
+  };
+
+  window.addEventListener('message', onMessage);
+
+  return (
+    <div>
+      {isValidToken ? (
+        // Render your application content here
+        <>
+          
+          <AppContainer /><h1>Valid access token</h1></>
+      ) : (
+        // Render an error message or loading screen
+        <h1>Invalid access token</h1>
+      )}
+    </div>
   );
-
-  const json = await response.json();
-  if (json.error_description) {
-    console.error("Error while verifying Firebase ID token:", json.error_description);
-    return false;
-  } else {
-    console.log(json);
-    return true;
-  }
 };
 
-const Iframe = async () => {
-  const [element, setElement] = useState(<div></div>);
-
-  window.addEventListener('message', async (event) => {
-    if(event.data.type === 'accessToken'){
-      const token = event.data.access_token;
-      const isValid = await isValidToken(token,'AIzaSyCvRoFPHRg91b6o2IU4kVvasoDQ0sUk0C0');
-      if (isValid) {
-        console.log(token)
-        setElement(
-          <div>
-            <AppContainer/>
-          </div>
-        );
-      } else {
-        console.log("False")
-        setElement(
-          <div>
-            <h1>Access token invalid</h1>
-            <body>Test?</body>
-          </div>
-        );
-      }
-    }
-  });
-
-  return element;
-};
-
-export default Iframe;
+export default IFrame;
