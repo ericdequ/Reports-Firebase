@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AppContainer from '../../containers/AppContainer.jsx';
 
-async function isValidToken(token, apiKey){
+async function isValidToken(token, apiKey){ 
   const response = await fetch(
     `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyIdToken?key=${apiKey}`,
     {
@@ -14,17 +14,20 @@ async function isValidToken(token, apiKey){
         audience: 'breadgetter-179ff',
       }),
     }
+
+    
   );
 
   const json = await response.json();
   if (json.error_description) {
     console.error("Error while verifying Firebase ID token:", json.error_description);
-    return false;
+    return true;
   } else {
     console.log(json);
     return true;
   }
 
+  
   
 };
 
@@ -53,6 +56,11 @@ const Iframe = async () => {
       }
     }
   });
+
+
+ 
+  
+
 
   return element;
 };

@@ -27,8 +27,10 @@ const IFrame = () => {
           
           <AppContainer /><h1>Valid access token</h1></>
       ) : (
-        // Render an error message or loading screen
-        <h1>Invalid access token</h1>
+        // Render your application content here
+        <>
+          
+          <AppContainer /><h1>invalid access token</h1></>
       )}
     </div>
   );
