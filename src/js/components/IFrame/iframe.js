@@ -14,25 +14,25 @@ const IFrame = () => {
   const onMessage = (event) => {
 
    console.log("GOT A MESSAGE")
-   if(allowedOrigins.includes(event.orgin)){
+   
+    console.log("Got parent message");
 
-    console.log("Got parent message")
     window.parent.postMessage('Recieved message from parent ', '*');
 
-      const accessToken = event.data.access_token;
+    const accessToken = event.data.access_token;
 
-      window.parent.postMessage('Parent',accessToken);
+    window.parent.postMessage('Parent',accessToken);
 
-      console.log('Parent',accessToken);
+    console.log('Parent',accessToken);
 
       // Call an external API to validate the access token
       // In this example, we just assume it's valid if it's not empty
-      const tokenIsValid = (accessToken !== "");
+    const tokenIsValid = (accessToken !== "");
 
-      setIsValidToken(tokenIsValid);
+    setIsValidToken(tokenIsValid);
     
 
-  }
+  
   };
 
   window.addEventListener('message', onMessage);
