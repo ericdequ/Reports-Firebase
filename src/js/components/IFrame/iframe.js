@@ -12,7 +12,8 @@ const IFrame = () => {
   const [isValidToken, setIsValidToken] = useState(false);
 
   const onMessage = (event) => {
-    console.log("GOT A MESSAGE")
+
+   console.log("GOT A MESSAGE")
    if(allowedOrigins.includes(event.orgin)){
 
     console.log("Got parent message")
