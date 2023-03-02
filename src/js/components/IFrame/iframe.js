@@ -13,15 +13,19 @@ const IFrame = () => {
 
   const onMessage = (event) => {
 
-   console.log("GOT A MESSAGE")
-   
-    console.log("Got parent message");
+  console.log("GOT A MESSAGE")
 
-    window.parent.postMessage('Recieved message from parent ', '*');
+  console.log(event.data)
 
-    const accessToken = event.data.access_token;
+  console.log(event.data.access_token)
+  
+  console.log("Got parent message");
 
-    window.parent.postMessage('Parent',accessToken);
+  window.parent.postMessage('Recieved message from parent ', '*');
+
+  const accessToken = event.data.access_token;
+
+  window.parent.postMessage('Parent',accessToken);
 
     console.log('Parent',accessToken);
 
@@ -30,9 +34,7 @@ const IFrame = () => {
     const tokenIsValid = (accessToken !== "");
 
     setIsValidToken(tokenIsValid);
-    
-
-  
+      
   };
 
   window.addEventListener('message', onMessage);
