@@ -5,6 +5,10 @@ const IFrame = () => {
   const [isValidToken, setIsValidToken] = useState(false);
 
   const onMessage = (event) => {
+   if(event.source == parent.window){
+    console.log("Got parent message")
+    window.parent.postMessage('Recieved message', '*');
+
    
     if (event.data.type === 'accessToken') {
       const accessToken = event.data.access_token;
@@ -15,6 +19,8 @@ const IFrame = () => {
 
       setIsValidToken(tokenIsValid);
     }
+
+  }
   };
 
   window.addEventListener('message', onMessage);
