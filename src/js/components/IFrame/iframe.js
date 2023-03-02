@@ -18,14 +18,14 @@ const IFrame = () => {
   console.log(event.data)
 
   console.log(event.data.access_token)
-  
+
   console.log("Got parent message");
 
   window.parent.postMessage('Recieved message from parent ', '*');
 
   const accessToken = event.data.access_token;
 
-  window.parent.postMessage('Parent',accessToken);
+  window.parent.postMessage('Parent', accessToken);
 
     console.log('Parent',accessToken);
 
