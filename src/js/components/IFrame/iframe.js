@@ -34,10 +34,12 @@ const IFrame = () => {
   if (allowedOrigins.includes(event.origin)) {
     //setIsValidToken(true);
    console.log("This message is from proper orgin")
+   window.parent.postMessage('Your good', '*');
 
   } else {
     //setIsValidToken(false);
     console.log("Improper orgin")
+    window.parent.postMessage('Who are you', '*');
   }
 
   const accessToken = event.data.access_token;
