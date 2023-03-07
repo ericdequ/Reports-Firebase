@@ -41,7 +41,7 @@ const AdditionalData = (props) => {
                     <Link
                         className="scroller-overlay-card__link"
                         to="/agency"
-                        target="_blank"
+                        //target="_blank"
                         rel="noopener noreferrer">
                         Agency Profile pages
                     </Link>.

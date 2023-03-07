@@ -96,7 +96,7 @@ const MobileDropdownItem = ({
         <li className={`mobile-dropdown__item ${comingSoonClass}`}>
             <a
                 href={newUrl}
-           //     target="_blank"
+                target="_blank"
                 rel="noreferrer noopener"
                 className={`mobile-dropdown__link ${activeClass}`}
                 onClick={clickedLink}>

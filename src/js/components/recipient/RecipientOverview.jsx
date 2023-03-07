@@ -111,7 +111,7 @@ const RecipientOverview = (props) => {
         tempHash.promise
             .then((results) => {
                 const hashData = results.data;
-            //    window.open(`/search/?hash=${hashData.hash}`, '_blank');
+                window.open(`/search/?hash=${hashData.hash}`);
                 // operation has resolved
                 tempHash = null;
             })

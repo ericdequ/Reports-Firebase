@@ -181,7 +181,7 @@ export default class StateOverview extends React.PureComponent {
                                 {(this.props.stateProfile.code) &&
                                     <Link
                                         className="state-section__award-button"
-                                        target="_blank"
+                                        //target="_blank"
                                         rel="noopener noreferrer"
                                         to="/search"
                                         onClick={handleGoToAdvancedSearch}>
