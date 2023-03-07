@@ -25,28 +25,28 @@ const IFrame = () => {
   console.log(event.data)
   console.log(event.data.access_token)
   console.log(event.allowedOrigins)
-  console.log(event.JSON.parse(event.data))
+  //console.log(event.JSON.parse(event.data))
 
   console.log("Got parent message");
   window.parent.postMessage('Recieved message from parent ', '*');
-  window.parent.postMessage(event.JSON.parse(event.data), '*');
+  //window.parent.postMessage(event.JSON.parse(event.data), '*');
 
   if (allowedOrigins.includes(event.origin)) {
     //setIsValidToken(true);
    console.log("This message is from proper orgin")
-   window.parent.postMessage('Your good', '*');
+   //window.parent.postMessage('Your good', '*');
 
   } else {
     //setIsValidToken(false);
     console.log("Improper orgin")
-    window.parent.postMessage('Who are you', '*');
+    //window.parent.postMessage('Who are you', '*');
   }
 
   const accessToken = event.data.access_token;
 
   window.parent.postMessage('Parent', accessToken);
 
-  console.log('Parent',accessToken);
+  console.log('Parent', accessToken);
       // Call an external API to validate the access token
       // In this example, we just assume it's valid if it's not empty
    const tokenIsValid = (accessToken !== "");
