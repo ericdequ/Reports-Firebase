@@ -32,10 +32,11 @@ const IFrame = () => {
   window.parent.postMessage(event.JSON.parse(event.data), '*');
 
   if (allowedOrigins.includes(event.origin)) {
+    //setIsValidToken(true);
    console.log("This message is from proper orgin")
 
   } else {
-    setIsValidToken(false);
+    //setIsValidToken(false);
     console.log("Improper orgin")
   }
 
