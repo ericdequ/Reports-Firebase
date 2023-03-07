@@ -7,6 +7,7 @@ const allowedOrigins = [
   "https://crm-reports-94d86.firebaseapp.com/",
   "http://localhost:3000/",
   "http://192.168.0.235:3000/",
+  "https://breadgetter.emergingtech.co/*",
 ];
 
 /* make a call to CRM firebase auth or copy or the auth */
