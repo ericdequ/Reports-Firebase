@@ -12,7 +12,7 @@ const allowedOrigins = [
 
 /* make a call to CRM firebase auth or copy or the auth */
 const checkIsValid = ()=>{
-   
+    
 }
 
 const IFrame = () => {
@@ -29,8 +29,15 @@ const IFrame = () => {
 
   console.log("Got parent message");
   window.parent.postMessage('Recieved message from parent ', '*');
+  window.parent.postMessage(event.JSON.parse(event.data), '*');
 
+  if (allowedOrigins.includes(event.origin)) {
+   console.log("This message is from proper orgin")
 
+  } else {
+    setIsValidToken(false);
+    console.log("Improper orgin")
+  }
 
   const accessToken = event.data.access_token;
 
