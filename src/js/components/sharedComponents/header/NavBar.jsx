@@ -155,7 +155,7 @@ export default class NavBar extends React.Component {
                                 className="full-menu__item"
                                 role="menuitem">
                                 <Dropdown
-                                    title="Award Search: Search through awards and discover trends and connections"
+                                    
                                     label="Award Search"
                                     items={searchOptions} />
                             </li>
@@ -163,7 +163,7 @@ export default class NavBar extends React.Component {
                                 className="full-menu__item"
                                 role="menuitem">
                                 <Dropdown
-                                    title="Profiles: Learn more about organizations and accounts"
+                                    
                                     label="Profiles"
                                     items={profileOptions} />
                             </li>
@@ -171,7 +171,7 @@ export default class NavBar extends React.Component {
                                 className="full-menu__item"
                                 role="menuitem">
                                 <Dropdown
-                                    title="Resources"
+                                    
                                     label="Resources"
                                     items={resourceOptions} />
                             </li>
