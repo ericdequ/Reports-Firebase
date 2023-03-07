@@ -104,10 +104,10 @@ const AwardSearch = () => {
             .then((results) => {
                 const hashData = results.data;
                 if (rankType === "naics" || rankType === "psc") {
-                    window.open(`search?hash=${hashData.hash}&tab=${tab}&rankType=${rankType}`, "_self");
+                    window.open(`search?hash=${hashData.hash}&tab=${tab}&rankType=${rankType}`);
                 }
                 else {
-                    window.open(`search?hash=${hashData.hash}&tab=${tab}`, "_self");
+                    window.open(`search?hash=${hashData.hash}&tab=${tab}`);
                 }
                 // operation has resolved
                 tempHash = null;

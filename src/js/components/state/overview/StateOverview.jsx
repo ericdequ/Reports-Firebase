@@ -110,7 +110,7 @@ export default class StateOverview extends React.PureComponent {
                 .then((results) => {
                     const hashData = results.data;
                     window.open(`/search/?hash=${hashData.hash}`, 
-                    '_self'
+                    
                     );
                     // operation has resolved
                     tempHash = null;
