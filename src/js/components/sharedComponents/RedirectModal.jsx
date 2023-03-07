@@ -56,7 +56,7 @@ export default class RedirectModal extends React.Component {
                         <div className="usa-dt-modal__link">
                             <a
                                 href={this.props.url}
-                                target="_blank"
+                           //     target="_blank"
                                 rel="noopener noreferrer">
                                 {this.props.url}
                             </a>

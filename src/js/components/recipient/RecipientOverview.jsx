@@ -111,7 +111,7 @@ const RecipientOverview = (props) => {
         tempHash.promise
             .then((results) => {
                 const hashData = results.data;
-                window.open(`/search/?hash=${hashData.hash}`, '_blank');
+            //    window.open(`/search/?hash=${hashData.hash}`, '_blank');
                 // operation has resolved
                 tempHash = null;
             })
@@ -165,7 +165,7 @@ const RecipientOverview = (props) => {
                             {(recipient.uei !== "" && recipient.uei !== null && recipient.uei !== undefined) &&
                                 <Link
                                     className="recipient-section__award-button"
-                                    target="_blank"
+                             //       target="_blank"
                                     rel="noopener noreferrer"
                                     to="/search"
                                     onClick={handleGoToAdvancedSearch}>

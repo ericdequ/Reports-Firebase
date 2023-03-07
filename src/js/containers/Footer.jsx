@@ -194,7 +194,9 @@ const Footer = ({
                             &copy; {year} Bread Getter
                         </p>
                         <p className="copyright__db">
-                            <strong>NOTE:</strong>&nbsp;<Link to="/db_info" target="_blank" rel="noopener noreferrer" title="Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data" aria-label="Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data" onClick={clickedFooterLink.bind(null, '/db_info')}>Click Here For Information About the Databse</Link>
+                            <strong>NOTE:</strong>&nbsp;<Link to="/db_info"
+                             //target="_blank"
+                             rel="noopener noreferrer" title="Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data" aria-label="Limitation on Permissible Use of Dun & Bradstreet, Inc. (D&B) Data" onClick={clickedFooterLink.bind(null, '/db_info')}>Click Here For Information About the Databse</Link>
                         </p>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const AboutSection = () => {
                     <Link
                         className="scroller-overlay-card__link"
                         to="/?about-the-data"
-                        target="_blank"
+                  //      target="_blank"
                         rel="noopener noreferrer">About the Data
                     </Link>: a collection of disclosures and background information
                 </li>
@@ -29,7 +29,7 @@ const AboutSection = () => {
                     <Link
                         className="scroller-overlay-card__link"
                         to="/analyst-guide"
-                        target="_blank"
+                  //      target="_blank"
                         rel="noopener noreferrer">
                         Analyst Guide
                     </Link>
@@ -39,7 +39,7 @@ const AboutSection = () => {
                     <Link
                         className="scroller-overlay-card__link"
                         to="/data-dictionary"
-                        target="_blank"
+                   //     target="_blank"
                         rel="noopener noreferrer">
                         Data Dictionary
                     </Link>
@@ -49,7 +49,7 @@ const AboutSection = () => {
                     <Link
                         className="scroller-overlay-card__link"
                         to="/download_center/dataset_metadata"
-                        target="_blank"
+                 //       target="_blank"
                         rel="noopener noreferrer">
                         Dataset Metadata
                     </Link>

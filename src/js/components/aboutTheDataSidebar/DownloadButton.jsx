@@ -11,7 +11,6 @@ const DownloadButton = () => (
     <div className="atd__download-wrapper">
         <a
             href="/data/about-the-data-download.pdf"
-            target="_blank"
             aria-label="Download"
             rel="noopener noreferrer"
             className="atd__download-button"

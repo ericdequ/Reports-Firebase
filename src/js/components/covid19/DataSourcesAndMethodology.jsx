@@ -26,7 +26,7 @@ const DataSourcesAndMethodology = ({ publicLaw }) => (
                 {publicLaw === 'american-rescue-plan' ?
                     <div />
                     :
-                    <p>USAspending is working with federal agencies to address known limitations in COVID-19 spending data. See a <a target="_blank" href="data/data-limitations.pdf" rel="noopener noreferrer">full description</a> of this issue.</p>
+                    <p>USAspending is working with federal agencies to address known limitations in COVID-19 spending data. See a <a target="_self" href="data/data-limitations.pdf" rel="noopener noreferrer">full description</a> of this issue.</p>
                 }
             </div>
         </div>

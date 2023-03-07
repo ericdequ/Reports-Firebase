@@ -58,7 +58,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/explorer"
-                                                target="_blank"
+                                               // target="_blank"
                                                 rel="noopener noreferrer">
                                         Spending Explorer
                                             </Link>{" "}
@@ -69,7 +69,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/agency"
-                                                target="_blank"
+                                                //target="_blank"
                                                 rel="noopener noreferrer">
                                         Agency Profiles
                                             </Link>{" "}
@@ -83,7 +83,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/federal_account"
-                                                target="_blank"
+                                              //  target="_blank"
                                                 rel="noopener noreferrer">
                                         Federal Account Profiles
                                             </Link>{" "}
@@ -119,7 +119,7 @@ const DataFeatures = (props) => {
                                         <Link
                                             className="scroller-overlay-card__link"
                                             to="/search"
-                                            target="_blank"
+                                            //target="_blank"
                                             rel="noopener noreferrer">
                                         Advanced Search
                                         </Link>
@@ -196,7 +196,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/disaster/covid-19"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         COVID-19 Spending Profile
                                             </Link>{" "}
@@ -204,7 +204,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/disaster/covid-19/data-sources"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         Data Sources and Methodology page
                                             </Link>
@@ -214,7 +214,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/search"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         Advanced Search
                                             </Link>{" "}
@@ -224,7 +224,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/download_center/custom_account_data"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         Custom Account Data Download
                                             </Link>{" "}
@@ -259,7 +259,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/download_center/award_data_archive"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         Award Data Archive
                                             </Link>{" "}
@@ -267,7 +267,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="download_center/custom_award_data"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                         Custom Award Data Download
                                             </Link>
@@ -277,7 +277,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/download_center/custom_account_data"
-                                                target="_blank"
+                                           //     target="_blank"
                                                 rel="noopener noreferrer">
                                         Custom Account Data Download
                                             </Link>
@@ -297,7 +297,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/search"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                             Advanced Search
                                             </Link>{" "}
@@ -309,7 +309,7 @@ const DataFeatures = (props) => {
                                             <Link
                                                 className="scroller-overlay-card__link"
                                                 to="/search"
-                                                target="_blank"
+                                            //    target="_blank"
                                                 rel="noopener noreferrer">
                                             Advanced Search
                                             </Link>{" "}

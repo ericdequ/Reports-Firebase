@@ -55,7 +55,7 @@ const CardButton = ({
                     role="button"
                     aria-label={`${text}`}>
                     <a
-                        target="_blank"
+                     //   target="_blank"
                         rel="noopener noreferrer"
                         onClick={action}
                         href={link}>

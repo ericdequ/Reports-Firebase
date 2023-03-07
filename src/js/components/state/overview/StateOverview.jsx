@@ -109,7 +109,9 @@ export default class StateOverview extends React.PureComponent {
             tempHash.promise
                 .then((results) => {
                     const hashData = results.data;
-                    window.open(`/search/?hash=${hashData.hash}`, '_blank');
+                    window.open(`/search/?hash=${hashData.hash}`, 
+                    '_self'
+                    );
                     // operation has resolved
                     tempHash = null;
                 })

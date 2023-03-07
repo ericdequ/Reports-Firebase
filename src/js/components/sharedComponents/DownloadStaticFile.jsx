@@ -16,7 +16,7 @@ const DownloadStaticFile = ({ path }) => (
     <div className="download_static-file__container">
         <a
             href={path}
-            target="_blank"
+        //    target="_blank"
             aria-label="Download"
             title="Download"
             rel="noopener noreferrer"

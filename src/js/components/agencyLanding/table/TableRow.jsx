@@ -48,7 +48,7 @@ export default class TableRow extends React.PureComponent {
                                 <div className="cell-content">
                                     <a
                                         href={`${this.props.agency.display[column.columnName]}`}
-                                        target="_blank">
+                                        target="_self">
                                         {`${this.props.agency.display[column.columnName]} `}
                                         <FontAwesomeIcon icon="external-link-alt" />
                                     </a>

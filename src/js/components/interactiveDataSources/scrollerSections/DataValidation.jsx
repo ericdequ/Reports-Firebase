@@ -167,7 +167,7 @@ const DataValidation = (props) => {
                                         <Link
                                             className="scroller-overlay-card__link"
                                             to="/submission-statistics"
-                                            target="_blank"
+                                       //     target="_blank"
                                             rel="noopener noreferrer">
                                         Agency Submission Statistics page
                                         </Link>.
@@ -175,7 +175,7 @@ const DataValidation = (props) => {
                                         <Link
                                             className="scroller-overlay-card__link"
                                             to="/submission-statistics/data-sources"
-                                            target="_blank"
+                                       //     target="_blank"
                                             rel="noopener noreferrer">
                                         Data Sources and Methodology page
                                         </Link>{" "}
