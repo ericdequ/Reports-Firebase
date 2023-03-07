@@ -21,9 +21,12 @@ const IFrame = () => {
   const onMessage = (event) => {
 
   console.log("GOT A MESSAGE")
+  
   console.log(event.data)
   console.log(event.data.access_token)
   console.log(event.allowedOrigins)
+  console.log(event.JSON.parse(event.data))
+
   console.log("Got parent message");
   window.parent.postMessage('Recieved message from parent ', '*');
 
