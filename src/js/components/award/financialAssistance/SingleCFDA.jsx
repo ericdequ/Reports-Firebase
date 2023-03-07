@@ -65,6 +65,7 @@ const SingleCFDA = ({ currentCfda }) => {
             <ExpandableAwardSection type="secondary" content={beneficiaryEligibility} />
         </React.Fragment>
     );
+
     return (
         <AwardSection type="column" className="cfda-section award-viz">
             <div className="award__col__content">
@@ -74,9 +75,9 @@ const SingleCFDA = ({ currentCfda }) => {
                     <h5>Administrative Agency</h5>
                     <p>{cfdaFederalAgency}</p>
                     <h5>Website</h5>
-                    <a href={cfdaWebsite}>{cfdaWebsite}</a>
+                    <a href={cfdaWebsite} target="_blank">{cfdaWebsite}</a>
                     <h5>SAM.gov Page</h5>
-                    <a href={samWebsite}>{samWebsite}</a>
+                    <a href={samWebsite} target="_blank">{samWebsite}</a>
                 </ExpandableAwardSection>
             </div>
         </AwardSection>
