@@ -19,18 +19,18 @@ const IFrame = () => {
 
   const onMessage = (event) => {
     window.parent.postMessage('Recieved message from parent ', '*');
+    
+    const accessToken = event.data.access_token;
 
     if (allowedOrigins.includes(event.origin)) {
       console.log("This message is from proper orgin")
+      let valid = checkIsValid(accessToken)
+      //setIsValidToken(valid);
     } else {
       //setIsValidToken(false);
       console.log("Improper orgin")
     }
 
-    const accessToken = event.data.access_token;
-
-    // Call an external API to validate the access token
-    // In this example, we just assume it's valid if it's not empty
     const tokenIsValid = (accessToken !== "");
 
     setIsValidToken(tokenIsValid);
