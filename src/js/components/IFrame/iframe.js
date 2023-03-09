@@ -48,7 +48,7 @@ const IFrame = () => {
       ) : (
         // Render your application content here
         <>
-          <InvalidAccessToken /></>
+          <AppContainer /></>
       )}
     </div>
   );
