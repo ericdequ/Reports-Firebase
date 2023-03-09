@@ -5,54 +5,36 @@ import InvalidAccessToken from './Invalid_Token';
 const allowedOrigins = [
   "https://crm-reports-94d86.web.app/",
   "https://crm-reports-94d86.firebaseapp.com/",
-  "http://localhost:3000/",
-  "http://192.168.0.235:3000/",
+  "http://localhost:3000/*",
   "https://breadgetter.emergingtech.co/*",
 ];
 
 /* make a call to CRM firebase auth or copy or the auth */
-const checkIsValid = ()=>{
-    
+const checkIsValid = () => {
+
 }
 
 const IFrame = () => {
   const [isValidToken, setIsValidToken] = useState(false);
 
   const onMessage = (event) => {
+    window.parent.postMessage('Recieved message from parent ', '*');
 
-  console.log("GOT A MESSAGE")
-  
-  console.log(event.data)
-  console.log(event.data.access_token)
-  console.log(event.allowedOrigins)
-  //console.log(event.JSON.parse(event.data))
+    if (allowedOrigins.includes(event.origin)) {
+      console.log("This message is from proper orgin")
+    } else {
+      //setIsValidToken(false);
+      console.log("Improper orgin")
+    }
 
-  console.log("Got parent message");
-  window.parent.postMessage('Recieved message from parent ', '*');
-  //window.parent.postMessage(event.JSON.parse(event.data), '*');
+    const accessToken = event.data.access_token;
 
-  if (allowedOrigins.includes(event.origin)) {
-    //setIsValidToken(true);
-   console.log("This message is from proper orgin")
-   //window.parent.postMessage('Your good', '*');
+    // Call an external API to validate the access token
+    // In this example, we just assume it's valid if it's not empty
+    const tokenIsValid = (accessToken !== "");
 
-  } else {
-    //setIsValidToken(false);
-    console.log("Improper orgin")
-    //window.parent.postMessage('Who are you', '*');
-  }
+    setIsValidToken(tokenIsValid);
 
-  const accessToken = event.data.access_token;
-
-  window.parent.postMessage('Parent', accessToken);
-
-  console.log('Parent', accessToken);
-      // Call an external API to validate the access token
-      // In this example, we just assume it's valid if it's not empty
-   const tokenIsValid = (accessToken !== "");
-
-   setIsValidToken(tokenIsValid);
-      
   };
 
   window.addEventListener('message', onMessage);
@@ -66,7 +48,7 @@ const IFrame = () => {
       ) : (
         // Render your application content here
         <>
-          <AppContainer /></>
+          <InvalidAccessToken /></>
       )}
     </div>
   );
