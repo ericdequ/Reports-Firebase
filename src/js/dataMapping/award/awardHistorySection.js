@@ -15,13 +15,6 @@ export const tabs = (awardType) => [
         tooltipContent: getToolTipBySectionAndAwardType('subAwards', awardType),
         tooltipProps: { wide: true }
     },
-    {
-        label: "Federal Account Funding",
-        internal: "federal_account",
-        enabled: true,
-        tooltipContent: getToolTipBySectionAndAwardType('federalAccountFunding', awardType),
-        tooltipProps: { wide: true }
-    }
 ];
 
 export const awardTypesWithSubawards = ['grant', 'contract'];
