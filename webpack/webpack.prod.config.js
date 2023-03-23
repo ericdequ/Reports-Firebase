@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.common');
@@ -27,7 +27,6 @@ module.exports = merge(common, {
             chunks: "all",
             cacheGroups: {
                 styles: {
-                    // all css in one file -- https://github.com/webpack-contrib/mini-css-extract-plugin
                     name: "styles",
                     test: /\.css$/,
                     chunks: "all",
@@ -63,7 +62,7 @@ module.exports = merge(common, {
         new webpack.optimize.MinChunkSizePlugin({
             minChunkSize: 300000
         }),
-        // new BundleAnalyzerPlugin(), // Webpack bundle volume analysis
+        new BundleAnalyzerPlugin(), // Webpack bundle volume analysis
         new webpack.DefinePlugin({
             'process.env': {
                 USASPENDING_API: process.env.USASPENDING_API
