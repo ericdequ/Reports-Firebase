@@ -17,9 +17,6 @@ To build the application for development, run:
 ## Building the PROD App
 To Build the application for production, run:
 `npm run prod`
-
-
-
 ### Features
 - Search government spending data with keyword search
 - Advanced search with multiple filters
@@ -47,12 +44,11 @@ To Build the application for production, run:
 
 Users can submit their search with the "Submit Search" button and reset the search parameters with the "Reset Search" button.
 
+## IFrame Connection
+- The application communicates with breadgetter via an iframe found in src/js/components/IFrame/
+- The Iframe validates if token is valid and then either serves the app container or The Invalid Token Page
 ## Learn More
 For more information about the React Government Spending Data App, please explore the following sections:
 - Detailed Insights and Profiles
 - Glossary and Data Dictionary
-
-npm run prod
-firebase login 
-firebase deploy
 
