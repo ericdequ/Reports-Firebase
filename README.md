@@ -1,29 +1,30 @@
-### React Government Spending Data App
+# React Government Spending Data App
 
 This React application allows users to search and explore government spending data with a keyword search and advanced filtering options. With an intuitive interface, users can gain detailed insights into agency, state, federal accounts, and recipient profiles. The app also includes a glossary and data dictionary to better understand government contracting data.
 
-## Installation
+### Installation
 To install the application, run the following command:
 `npm install --legacy-peer-deps`
 
-## Running the App
+### Running the App
 To start the application in development mode, run:
 `npm start`
 
-## Building the DEVApp
+### Building the DEVApp
 To build the application for development, run:
 `npm run dev`
 
-## Building the PROD App
+### Building the PROD App
 To Build the application for production, run:
 `npm run prod`
-### Features
+
+## Features
 - Search government spending data with keyword search
 - Advanced search with multiple filters
 - Detailed insights into agency, state, federal accounts, and recipient profiles
 - Access to a glossary and data dictionary of government contracting data
 
-## Advanced Filters
+### Advanced Filters
 - Keyword
 - Time Period
 - Award Type
