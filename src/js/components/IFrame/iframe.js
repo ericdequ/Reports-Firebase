@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import AppContainer from '../../containers/AppContainer';
 import InvalidAccessToken from './Invalid_Token';
 
@@ -18,7 +18,7 @@ const checkIsValid = async (accessToken) => {
         resolve(true);
         console.log("valid");
       } else {
-        resolve(true);
+        resolve(false);
         console.log("invalid");
       }
     }, 300);
@@ -29,19 +29,18 @@ const IFrame = () => {
   const [isValidToken, setIsValidToken] = useState(false);
   const [accessToken, setAccessToken] = useState('');
 
-  const onMessage = (event) => {
+  const onMessage = useCallback((event) => {
     window.parent.postMessage('Recieved message from parent ', '*');
 
     const token = event.data.access_token;
     setAccessToken(token);
 
     if (allowedOrigins.includes(event.origin)) {
-      console.log("This message is from proper orgin");
       setAccessToken(token);
     } else {
       console.log("Improper orgin");
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (accessToken !== '') {
@@ -53,16 +52,25 @@ const IFrame = () => {
     }
   }, [accessToken]);
 
-  window.addEventListener('message', onMessage);
+  useEffect(() => {
+    window.addEventListener('message', onMessage);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('message', onMessage);
+    };
+  }, [onMessage]);
 
   return (
     <div>
       {isValidToken ? (
         <>
-          <AppContainer /></>
+          <AppContainer />
+        </>
       ) : (
         <>
-          <InvalidAccessToken/></>
+          <InvalidAccessToken />
+        </>
       )}
     </div>
   );

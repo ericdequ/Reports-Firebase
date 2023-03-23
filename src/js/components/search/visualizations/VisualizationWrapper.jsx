@@ -11,8 +11,6 @@ import { withRouter } from "react-router-dom";
 import ResultsTableContainer from 'containers/search/table/ResultsTableContainer';
 import TimeVisualizationSectionContainer from
     'containers/search/visualizations/time/TimeVisualizationSectionContainer';
-import GeoVisualizationSectionContainer from
-    'containers/search/visualizations/geo/GeoVisualizationSectionContainer';
 import RankVisualizationWrapperContainer from
     'containers/search/visualizations/rank/RankVisualizationWrapperContainer';
 
