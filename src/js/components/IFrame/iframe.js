@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppContainer from '../../containers/AppContainer';
 import InvalidAccessToken from './Invalid_Token';
 
@@ -10,43 +10,57 @@ const allowedOrigins = [
 ];
 
 /* make a call to CRM firebase auth or copy or the auth */
-const checkIsValid = () => {
-
-}
+const checkIsValid = async (accessToken) => {
+  // Simulate an asynchronous operation
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      if (accessToken !== '') {
+        resolve(true);
+        console.log("valid");
+      } else {
+        resolve(true);
+        console.log("invalid");
+      }
+    }, 300);
+  });
+};
 
 const IFrame = () => {
   const [isValidToken, setIsValidToken] = useState(false);
+  const [accessToken, setAccessToken] = useState('');
 
   const onMessage = (event) => {
     window.parent.postMessage('Recieved message from parent ', '*');
-    
-    const accessToken = event.data.access_token;
+
+    const token = event.data.access_token;
+    setAccessToken(token);
 
     if (allowedOrigins.includes(event.origin)) {
-      console.log("This message is from proper orgin")
-      let valid = checkIsValid(accessToken)
-      //setIsValidToken(valid);
+      console.log("This message is from proper orgin");
+      setAccessToken(token);
     } else {
-      //setIsValidToken(false);
-      console.log("Improper orgin")
+      console.log("Improper orgin");
     }
-
-    const tokenIsValid = (accessToken !== "");
-
-    setIsValidToken(tokenIsValid);
-
   };
+
+  useEffect(() => {
+    if (accessToken !== '') {
+      const checkTokenValidity = async () => {
+        const valid = await checkIsValid(accessToken);
+        setIsValidToken(valid);
+      };
+      checkTokenValidity();
+    }
+  }, [accessToken]);
 
   window.addEventListener('message', onMessage);
 
   return (
     <div>
       {isValidToken ? (
-        // Render your application content here
         <>
           <AppContainer /></>
       ) : (
-        // Render your application content here
         <>
           <InvalidAccessToken/></>
       )}
